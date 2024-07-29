@@ -140,7 +140,7 @@
             this.btnMergeFiles.Name = "btnMergeFiles";
             this.btnMergeFiles.Size = new System.Drawing.Size(150, 30);
             this.btnMergeFiles.TabIndex = 2;
-            this.btnMergeFiles.Text = "파일 합치기";
+            this.btnMergeFiles.Text = "모집미션 작업시작";
             this.btnMergeFiles.UseVisualStyleBackColor = true;
             this.btnMergeFiles.Click += new System.EventHandler(this.btnMergeFiles_Click);
             // 
@@ -184,7 +184,7 @@
             this.ClientSize = new System.Drawing.Size(520, 311);
             this.Controls.Add(this.tabControl);
             this.Name = "Form1";
-            this.Text = "혜진_정산업로드파일 만들기";
+            this.Text = "혜진_모집미션 만들기";
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);

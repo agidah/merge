@@ -196,7 +196,7 @@ namespace ExcelFileRenamer
                 {
                     var colE = sheet1.Cells[row, 5].Text;
                     var colD = sheet1.Cells[row, 4].Text;
-                    sheet2.Cells[row, 3].Value = $"{colE}_배달미션_{colD}";
+                    sheet2.Cells[row, 3].Value = $"{colE}_모집미션_{colD}";
                 }
 
                 for (int row = 2; row < currentRow; row++)
@@ -210,16 +210,16 @@ namespace ExcelFileRenamer
                 }
 
                 DateTime today = DateTime.Today;
-                DateTime wednesday = today.AddDays(DayOfWeek.Wednesday - today.DayOfWeek);
-                if (wednesday < today)
-                    wednesday = wednesday.AddDays(7);
+                DateTime tuesday = today.AddDays(DayOfWeek.Tuesday - today.DayOfWeek);
+                if (tuesday < today)
+                    tuesday = tuesday.AddDays(7);
 
-                string formattedWednesday = wednesday.ToString("yyyy-MM-dd");
-
+                string formattedTuesday = tuesday.ToString("yyyy-MM-dd");
                 for (int row = 2; row < currentRow; row++)
                 {
-                    sheet2.Cells[row, 5].Value = formattedWednesday;
+                    sheet2.Cells[row, 5].Value = formattedTuesday;
                 }
+
 
                 // Sheet1의 A열 데이터를 Sheet2의 A열로 복사
                 for (int row = 1; row < currentRow; row++)
@@ -250,7 +250,7 @@ namespace ExcelFileRenamer
                 package.SaveAs(new FileInfo(outputFilePath));
             }
 
-            MessageBox.Show("파일이 성공적으로 합쳐졌습니다.");
+            MessageBox.Show("프로모션 업로드 파일 제작완료.");
         }
 
         private Dictionary<string, Tuple<string, string>> LoadReferenceData(string referenceFilePath)
